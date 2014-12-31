@@ -9,6 +9,7 @@
         <module>customermgr</module>
         <module>goodsmgr</module>
         <module>arche1web</module>
+        <module>common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -47,6 +48,23 @@
           <artifactId>spring-tx</artifactId>
           <version>4.0.0.RELEASE</version>
       </dependency>
+      <!-- Mybatis的jar -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+          <version>3.2.3</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>1.2.2</version>
+      </dependency>
+      <!-- mysql jar -->
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.28</version>
+      </dependency>
       <!-- 日志的jar -->
       <dependency>
           <groupId>org.slf4j</groupId>
@@ -58,17 +76,11 @@
           <artifactId>logback-classic</artifactId>
           <version>1.0.13</version>
       </dependency>
-      <!-- mysql jar -->
-      <dependency>
-          <groupId>mysql</groupId>
-          <artifactId>mysql-connector-java</artifactId>
-          <version>5.1.28</version>
-      </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

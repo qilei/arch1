@@ -1,6 +1,6 @@
 package me.lei.arch1.customermgr.vo;
 
-import com.sishuok.architecture1.common.vo.BaseModel;
+import me.lei.arch1.common.vo.BaseModel;
 
 public class CustomerModel extends BaseModel{
 	

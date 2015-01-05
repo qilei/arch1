@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="arche1web" />
+        <module name="common" />
         <module name="customermgr" />
         <module name="goodsmgr" />
       </profile>

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/arch1.iml" filepath="$PROJECT_DIR$/arch1.iml" />
       <module fileurl="file://$PROJECT_DIR$/arche1web/arche1web.iml" filepath="$PROJECT_DIR$/arche1web/arche1web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/customermgr/customermgr.iml" filepath="$PROJECT_DIR$/customermgr/customermgr.iml" />
       <module fileurl="file://$PROJECT_DIR$/goodsmgr/goodsmgr.iml" filepath="$PROJECT_DIR$/goodsmgr/goodsmgr.iml" />
     </modules>

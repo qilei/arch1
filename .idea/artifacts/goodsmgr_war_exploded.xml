@@ -19,10 +19,16 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.0.0.RELEASE" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.2" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.3" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.2" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.28" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.3.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.3.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.0.13" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.0.13" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.28" />
         </element>
       </element>
     </root>

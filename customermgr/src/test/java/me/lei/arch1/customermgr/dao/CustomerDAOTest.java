@@ -1,6 +1,7 @@
 package me.lei.arch1.customermgr.dao;
 
 import me.lei.arch1.customermgr.vo.CustomerModel;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -12,7 +13,7 @@ import javax.annotation.Resource;
  * Created by qilei on 2015/1/5.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "")
+@ContextConfiguration(locations = "classpath:applicationContext.xml")
 public class CustomerDAOTest {
     @Resource
     private CustomerDAO customerDAO;
@@ -20,5 +21,6 @@ public class CustomerDAOTest {
     @Test
     public void testGetByCustomerId() throws Exception {
         CustomerModel customerModel = customerDAO.getByCustomerId("c1");
+        Assert.assertTrue(customerModel!=null);
     }
 }

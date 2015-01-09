@@ -1,5 +1,6 @@
 # Intellij project files
 *.iml
+/*.iml
 .idea/
 
 # Others

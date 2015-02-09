@@ -107,6 +107,18 @@
           </exclusions>
       </dependency>
 
+      <!--工具jar -->
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>15.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+          <version>3.3.2</version>
+      </dependency>
+
       <!-- 日志的jar -->
       <dependency>
           <groupId>org.slf4j</groupId>

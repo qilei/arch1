@@ -1,9 +1,9 @@
 # Intellij project files
 *.iml
 /*.iml
+/arch1.iml
 .idea/
 
 # Others
 target/
 logs/
-/arch1.iml

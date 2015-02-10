@@ -7,6 +7,7 @@ package me.lei.pagination;
 import com.google.common.collect.Maps;
 import me.lei.pagination.dto.datatables.BasePageCriteria;
 import me.lei.pagination.dto.datatables.PagingCriteria;
+import me.lei.pagination.helpers.Reflections;
 import me.lei.pagination.helpers.StringHelper;
 
 import java.lang.reflect.Array;
@@ -74,7 +75,9 @@ public enum PagingParametersFinder {
         //primitive
         if (isPrimitiveType(obj_class)) {
             pc = null;
-        } else if (object instanceof PagingCriteria) {
+        }else if(object instanceof BasePageCriteria){
+            pc = (PagingCriteria) Reflections.getFieldValue(object, "page");
+        }  else if (object instanceof PagingCriteria) {
             pc = (PagingCriteria) object;
         } else if (object instanceof Map) {
             pc = findCriteriaFromMap((Map) object);

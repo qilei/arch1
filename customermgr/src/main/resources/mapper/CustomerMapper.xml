@@ -24,7 +24,7 @@
     <select id="getByUuid" parameterType="int" resultType="CM">  
         select * from tbl_customer where uuid=#{uuid}
     </select>  
-    <select id="getByConditionPage" parameterType="CQM" resultType="CM">  
+    <select id="getByPage" parameterType="CQM" resultType="CM">
         select * from tbl_customer
         <where>
         	<if test="uuid!=null &amp;&amp; uuid > 0">

@@ -29,8 +29,8 @@ public class BaseService<M, QM extends BaseModel> implements IBaseService<M,QM> 
 		return (M)dao.getByUuid(uuid);
 	}
 
-	public Page<M> getByConditionPage(QM qm) {
-		List<M> list = dao.getByConditionPage(qm);
+	public Page<M> getByPage(QM qm) {
+		List<M> list = dao.getByPage(qm);
 		qm.getPage().setResult(list);
 		
 		return qm.getPage();

@@ -1,19 +1,10 @@
 package me.lei.arch1.common.vo;
 
 
-import me.lei.pageutil.Page;
 
 public class BaseModel implements java.io.Serializable{
 	
 	private Integer uuid;
-	private Page page = new Page();
-
-	public Page getPage() {
-		return page;
-	}
-	public void setPage(Page page) {
-		this.page = page;
-	}	
 	public Integer getUuid() {
 		return uuid;
 	}

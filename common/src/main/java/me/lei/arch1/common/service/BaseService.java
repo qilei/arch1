@@ -2,13 +2,12 @@ package me.lei.arch1.common.service;
 
 
 import me.lei.arch1.common.dao.BaseDAO;
-import me.lei.arch1.common.vo.BaseModel;
-import me.lei.pageutil.Page;
-
-import java.util.List;
+import me.lei.pagination.dto.PageMyBatis;
+import me.lei.pagination.dto.datatables.BasePageCriteria;
 
 
-public class BaseService<M, QM extends BaseModel> implements IBaseService<M,QM> {
+
+public class BaseService<M, QM extends BasePageCriteria> implements IBaseService<M,QM> {
 	private BaseDAO dao = null;
 	public void setDAO(BaseDAO dao){
 		this.dao = dao;
@@ -29,10 +28,8 @@ public class BaseService<M, QM extends BaseModel> implements IBaseService<M,QM> 
 		return (M)dao.getByUuid(uuid);
 	}
 
-	public Page<M> getByPage(QM qm) {
-		List<M> list = dao.getByPage(qm);
-		qm.getPage().setResult(list);
-		
-		return qm.getPage();
+	public PageMyBatis<M> getByPage(QM qm) {
+        PageMyBatis<M> list = dao.getByPage(qm);
+        return list;
 	}
 }

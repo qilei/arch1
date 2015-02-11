@@ -68,6 +68,10 @@ public class PageMyBatis<E> extends ArrayList<E> {
         return total;
     }
 
+    public PagingCriteria getPageable() {
+        return pageable;
+    }
+
     /**
      * Warp page.
      *

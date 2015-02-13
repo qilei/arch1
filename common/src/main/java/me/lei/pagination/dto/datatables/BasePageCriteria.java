@@ -8,6 +8,10 @@ import java.io.Serializable;
 public class BasePageCriteria implements Serializable {
     private PagingCriteria page;
 
+    public BasePageCriteria() {
+        this.page = PagingCriteria.getDefaultCriteria();
+    }
+
     public BasePageCriteria(PagingCriteria page) {
         this.page = page;
     }

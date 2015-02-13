@@ -68,13 +68,13 @@ public class PaginationExecutor implements Executor {
             boolean isPage = PaginationInterceptor.getIsPage();
             if (isPage) {
                 int total = PaginationInterceptor.getPaginationTotal();
-                if (total != 0) {
+//                if (total != 0) {
                     final PageMyBatis<E> result = new PageMyBatis<E>(rows, PaginationInterceptor.getPageRequest(), total);
                     doCache(ms, result, parameter, rowBounds);
                     return result;
-                } else {
-                    return new PageMyBatis<E>(rows);
-                }
+//                } else {
+//                    return new PageMyBatis<E>(rows);
+//                }
             } else {
                 return rows;
             }
@@ -93,13 +93,13 @@ public class PaginationExecutor implements Executor {
             boolean isPage = PaginationInterceptor.getIsPage();
             if (isPage) {
                 int total = PaginationInterceptor.getPaginationTotal();
-                if (total != 0) {
+//                if (total != 0) {
                     final PageMyBatis<E> result = new PageMyBatis<E>(rows, PaginationInterceptor.getPageRequest(), total);
                     doCache(ms, result, parameter, rowBounds);
                     return result;
-                } else {
-                    return new PageMyBatis<E>(rows);
-                }
+//                } else {
+//                    return new PageMyBatis<E>(rows);
+//                }
             } else {
                 return rows;
             }

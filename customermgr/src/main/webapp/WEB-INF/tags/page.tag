@@ -3,10 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
+    int total = (int)pagedList.getTotal();
     int current =pagedList.getPageable().getPageNumber();
     int begin = 1;
     int end = (int) Math.ceil((double)pagedList.getTotal() / pagedList.getPageable().getDisplaySize());
-    int total = (int)pagedList.getTotal();
+
     String queryString = request.getQueryString();
 //    if(queryString != null){
 //        queryString = queryString.replaceAll("&page=\\d","");

@@ -9,6 +9,10 @@ public class CustomerQueryModel extends BasePageCriteria {
     private String customerId;
     private String showName;
 
+    public CustomerQueryModel() {
+        super();
+    }
+
     public CustomerQueryModel(PagingCriteria page) {
         super(page);
     }

@@ -5,12 +5,15 @@ import me.lei.arch1.customermgr.vo.CustomerModel;
 import me.lei.arch1.customermgr.vo.CustomerQueryModel;
 import me.lei.pagination.dto.PageMyBatis;
 import me.lei.pagination.dto.datatables.PagingCriteria;
+import me.lei.spring.TableParam;
 import me.lei.util.format.DateFormatHelper;
 import me.lei.util.json.JsonHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.naming.ldap.PagedResultsControl;
 
 @Controller
 @RequestMapping(value="/customer")
@@ -52,32 +55,9 @@ public class CustomerController {
 		return "customer/success";
 	}
 	@RequestMapping(value={"toList",""},method=RequestMethod.GET)
-	public String toList(@ModelAttribute("wm")CustomerWebModel wm,Model model){
-
-        PagingCriteria baseCriteria = PagingCriteria.createCriteria(0, 10, 1);
-        CustomerQueryModel qm = new CustomerQueryModel(baseCriteria);
+	public String toList(@TableParam CustomerQueryModel qm,Model model){
         PageMyBatis<CustomerModel> pagedList = ics.getByPage(qm);
-
         model.addAttribute("pagedList", pagedList);
-
-//		CustomerQueryModel cqm = null;
-//		if(wm.getQueryJsonStr()==null || wm.getQueryJsonStr().trim().length()==0){
-//			cqm =  new CustomerQueryModel();
-//		}else{
-//			cqm = (CustomerQueryModel) JsonHelper.str2Object(wm.getQueryJsonStr(), CustomerQueryModel.class);
-//		}
-//
-//		cqm.getPage().setNowPage(wm.getNowPage());
-//		if(wm.getPageShow() > 0){
-//			cqm.getPage().setPageShow(wm.getPageShow());
-//		}
-//
-//		Page dbPage = ics.getByConditionPage(cqm);
-//
-//		//
-//		model.addAttribute("wm", wm);
-//		model.addAttribute("page", dbPage);
-				
 		return "customer/list";
 	}
 }

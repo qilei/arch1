@@ -22,31 +22,35 @@ public class PagingCriteria {
     /**
      * The constant DEFAULT_CRITERIA.
      */
-    private static final PagingCriteria DEFAULT_CRITERIA = new PagingCriteria(0, PagingCriteria.DEFAULT_SIZE, PagingCriteria.DEFAULT_SIZE);
+    private static final PagingCriteria DEFAULT_CRITERIA = new PagingCriteria(0, PagingCriteria.DEFAULT_SIZE, 2);
     /**
      * default page size.
      */
-    private static final int DEFAULT_SIZE = 10;
+    public static final int DEFAULT_SIZE = 10;
     /**
      * start display
      */
-    private final int displayStart;
+    private int displayStart;
     /**
      * disaplaySize
      */
-    private final int displaySize;
+    private int displaySize;
     /**
      * sort fields
      */
-    private final List<SortField> sortFields;
+    private List<SortField> sortFields;
     /**
      * search field information
      */
-    private final List<SearchField> searchFields;
+    private List<SearchField> searchFields;
     /**
      * pageNumber
      */
-    private final int pageNumber;
+    private int pageNumber;
+
+    public PagingCriteria(){
+
+    }
 
     /**
      * Instantiates a new Paging criteria.
@@ -242,4 +246,15 @@ public class PagingCriteria {
         return pageNumber;
     }
 
+    public void setDisplayStart(int displayStart) {
+        this.displayStart = displayStart;
+    }
+
+    public void setDisplaySize(int displaySize) {
+        this.displaySize = displaySize;
+    }
+
+    public void setPageNumber(int pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 }

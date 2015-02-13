@@ -21,6 +21,9 @@
 
 	<!-- 会自动注册了validator ConversionService -->
 	<mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="me.lei.spring.TableParamArgumentResolver"/>
+        </mvc:argument-resolvers>
 	</mvc:annotation-driven>
 
 	<mvc:default-servlet-handler />

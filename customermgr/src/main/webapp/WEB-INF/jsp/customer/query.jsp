@@ -9,7 +9,7 @@
 <script src="${pageContext.request.contextPath}/static/js/jquery-1.11.0.js"></script>
 </head>
 <body>
-<script type="text/javascript">
+<%--<script type="text/javascript">
 	$().ready(function(){
 		$("#btn_query").click(function(){
 			
@@ -21,8 +21,8 @@
 			window.location.href = "${pageContext.request.contextPath}/customer/toList?queryJsonStr="+json;
 		});		
 	});
-</script>
-
+</script>--%>
+<form id="queryForm" action="${pageContext.request.contextPath}/customer/toList" method="get">
 <table width="100%" border="1" cellpadding="0" cellspacing="1" class="tableLine">
 	<tr>
 		<td colspan=4 align=center class="tableLineBg">客户查询</td>
@@ -40,9 +40,9 @@
 		<td><input type="text" id="trueName" name="trueName" class="input"></td>
 	</tr>		
 	<tr>
-		<td colspan=4 align=center><input id="btn_query" type="button" value="查询" class="button"></td>
+		<td colspan=4 align=center><input id="btn_query" type="submit" value="查询" class="button"></td>
 	</tr>
 </table>
-
+</form>
 </body>
 </html>

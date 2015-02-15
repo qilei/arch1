@@ -31,7 +31,7 @@
         		and uuid=#{uuid}
         	</if>  
         	<if test="customerId!=null &amp;&amp; customerId!=''">
-        		and customerId like #{customerId}
+        		and customerId like CONCAT(#{customerId},'%')
         	</if>
         	<if test="showName!=null &amp;&amp; showName!=''">
         		and showName=#{showName}

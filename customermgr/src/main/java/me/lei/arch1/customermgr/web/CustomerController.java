@@ -60,4 +60,8 @@ public class CustomerController {
         model.addAttribute("pagedList", pagedList);
 		return "customer/list";
 	}
+    @RequestMapping(value="toQuery",method=RequestMethod.GET)
+    public String toQuery(){
+        return "customer/query";
+    }
 }

@@ -7,17 +7,16 @@
     int current =pagedList.getPageable().getPageNumber();
     int begin = 1;
     int end = (int) Math.ceil((double)pagedList.getTotal() / pagedList.getPageable().getDisplaySize());
-
     String queryString = request.getQueryString();
-//    if(queryString != null){
-//        queryString = queryString.replaceAll("&page=\\d","");
-//    }
+    if(queryString != null){
+        queryString = queryString.replaceAll("&p=\\d","");
+    }
 
     request.setAttribute("current", current);
     request.setAttribute("begin", begin);
     request.setAttribute("end", end);
     request.setAttribute("total", total);
-//    request.setAttribute("queryString",queryString);
+    request.setAttribute("queryString",queryString);
 %>
 <table width="100%" align="center">
     <tr>
@@ -33,8 +32,8 @@
                 	上一页&nbsp;&nbsp;
             </c:when>
             <c:otherwise>
-                <a href="#" onclick="turnPage(1);" title="首页">首页</a>&nbsp;&nbsp;
-                <a href="#" onclick="turnPage(${current - 1});" title="上一页">上一页</a>&nbsp;&nbsp;
+                <a href="?${queryString}&p=1" title="首页">首页</a>&nbsp;&nbsp;
+                <a href="?${queryString}&p=${current - 1}" title="上一页">上一页</a>&nbsp;&nbsp;
             </c:otherwise>
         </c:choose>
         <c:choose>
@@ -43,8 +42,8 @@
                 	尾页&nbsp;&nbsp;
             </c:when>
             <c:otherwise>
-                <a href="#" onclick="turnPage(${current + 1});" title="下一页">下一页</a>&nbsp;&nbsp;
-                <a href="#" onclick="turnPage(${end});" title="尾页">尾页</a>&nbsp;&nbsp;
+                <a href="?${queryString}&p=${current + 1}"  title="下一页">下一页</a>&nbsp;&nbsp;
+                <a href="?${queryString}&p=${end}" title="尾页">尾页</a>&nbsp;&nbsp;
             </c:otherwise>
         </c:choose>
         

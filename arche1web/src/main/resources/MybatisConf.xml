@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="me.lei.arch1.customermgr.vo.CustomerModel" alias="CM"/>
+		<typeAlias type="me.lei.arch1.customermgr.vo.CustomerQueryModel" alias="CQM"/>
+        <typeAlias type="me.lei.arch1.goodsmgr.vo.GoodsModel" alias="GM"/>
+        <typeAlias type="me.lei.arch1.goodsmgr.vo.GoodsQueryModel" alias="GQM"/>
+	</typeAliases>
+
+    <plugins>
+        <plugin interceptor="me.lei.pagination.PaginationInterceptor">
+            <property name="dbms" value="MYSQL"/>
+            <property name="sqlRegex" value=".*Page.*"/>
+        </plugin>
+    </plugins>
+</configuration> 

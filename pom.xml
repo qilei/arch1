@@ -10,6 +10,10 @@
         <module>goodsmgr</module>
         <module>arche1web</module>
         <module>common</module>
+        <module>storemgr</module>
+        <module>cartmgr</module>
+        <module>ordermgr</module>
+        <module>filemgr</module>
     </modules>
     <packaging>pom</packaging>
 

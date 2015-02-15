@@ -6,6 +6,16 @@
 		<typeAlias type="me.lei.arch1.customermgr.vo.CustomerQueryModel" alias="CQM"/>
         <typeAlias type="me.lei.arch1.goodsmgr.vo.GoodsModel" alias="GM"/>
         <typeAlias type="me.lei.arch1.goodsmgr.vo.GoodsQueryModel" alias="GQM"/>
+        <typeAlias type="me.lei.arch1.storemgr.vo.StoreModel" alias="StoreM"/>
+        <typeAlias type="me.lei.arch1.storemgr.vo.StoreQueryModel" alias="StoreQM"/>
+        <typeAlias type="me.lei.arch1.cartmgr.vo.CartModel" alias="CartM"/>
+        <typeAlias type="me.lei.arch1.cartmgr.vo.CartQueryModel" alias="CartQM"/>
+        <typeAlias type="me.lei.arch1.filemgr.vo.FileModel" alias="FileM"/>
+        <typeAlias type="me.lei.arch1.filemgr.vo.FileQueryModel" alias="FileQM"/>
+        <typeAlias type="me.lei.arch1.ordermgr.vo.OrderModel" alias="OM"/>
+        <typeAlias type="me.lei.arch1.ordermgr.vo.OrderQueryModel" alias="OQM"/>
+        <typeAlias type="me.lei.arch1.ordermgr.vo.OrderDetailModel" alias="ODM"/>
+        <typeAlias type="me.lei.arch1.ordermgr.vo.OrderDetailQueryModel" alias="ODQM"/>
 	</typeAliases>
 
     <plugins>

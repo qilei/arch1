@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="me.lei.arch1.cartmgr.vo.CartModel" alias="CartM"/>
+		<typeAlias type="me.lei.arch1.cartmgr.vo.CartQueryModel" alias="CartQM"/>
+	</typeAliases>
+
+    <plugins>
+        <plugin interceptor="me.lei.pagination.PaginationInterceptor">
+            <property name="dbms" value="MYSQL"/>
+            <property name="sqlRegex" value=".*Page.*"/>
+        </plugin>
+    </plugins>
+</configuration> 

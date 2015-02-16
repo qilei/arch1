@@ -2,11 +2,18 @@ package me.lei.arch1.ordermgr.service;
 
 
 import me.lei.arch1.cartmgr.service.ICartService;
+import me.lei.arch1.cartmgr.vo.CartModel;
+import me.lei.arch1.cartmgr.vo.CartQueryModel;
 import me.lei.arch1.common.service.BaseService;
 import me.lei.arch1.ordermgr.dao.OrderDAO;
+import me.lei.arch1.ordermgr.vo.OrderDetailModel;
 import me.lei.arch1.ordermgr.vo.OrderModel;
 import me.lei.arch1.ordermgr.vo.OrderQueryModel;
 import me.lei.arch1.storemgr.service.IStoreService;
+import me.lei.arch1.storemgr.vo.StoreModel;
+import me.lei.pagination.dto.PageMyBatis;
+import me.lei.pagination.dto.datatables.PagingCriteria;
+import me.lei.util.format.DateFormatHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,61 +34,53 @@ public class OrderService extends BaseService<OrderModel,OrderQueryModel> implem
 		super.setDAO(dao);
 	}
 	public void order(int customerUuid) {
-		//消息的 生产者
-//		for(int i=0;i<100;i++){
-//			QueueSender.sendMsg(customerUuid);
-//		}
-		
-		
-//			//消息的消费者来完成如下功能
-//			CartQueryModel cqm = new CartQueryModel();
-//			cqm.getPage().setPageShow(1000);
-//			cqm.setCustomerUuid(customerUuid);
-//			
-//			Page<CartModel>  page = ics.getByConditionPage(cqm);
-//			//2:
-//			float totalMoney = 0.0f;
-//			for(CartModel cm : page.getResult()){
-//				totalMoney += 10;
-//			}
-//			
-//			OrderModel order = new OrderModel();
-//			order.setCustomerUuid(customerUuid);
-//			order.setOrderTime(DateFormatHelper.long2str(System.currentTimeMillis()));
-//			order.setSaveMoney(0.0F);
-//			order.setTotalMoney(totalMoney);
-//			order.setState(1);
-//	
-//			create(order);
-//			
-//			OrderQueryModel oqm = new OrderQueryModel();
-//			oqm.setOrderTime(order.getOrderTime());
-//			
-//			Page<OrderModel>  orderPage = getByConditionPage(oqm);
-//			order = orderPage.getResult().get(0);
-//			
-//			//3:
-//			for(CartModel cm : page.getResult()){
-//				OrderDetailModel odm = new OrderDetailModel();
-//				odm.setGoodsUuid(cm.getGoodsUuid());
-//				odm.setOrderNum(cm.getBuyNum());
-//				odm.setPrice(10.0f);
-//				odm.setMoney(odm.getPrice() * odm.getOrderNum());
-//				odm.setSaveMoney(0.0f);
-//				odm.setOrderUuid(order.getUuid());
-//				
-//				iods.create(odm);
-//				//4:
-//				StoreModel storeModel = iss.getByGoodsUuid(cm.getGoodsUuid());
-//				storeModel.setStoreNum(storeModel.getStoreNum() - odm.getOrderNum());
-//				iss.update(storeModel);
-//				
-//				//5:
-//	//			ics.delete(cm.getUuid());
-//			}	
-//		
-//		long a2 = new Date().getTime();
-//		System.out.println("NONO send one msg time==="+(a2-a));
+
+			CartQueryModel cqm = new CartQueryModel();
+        cqm.setPage(PagingCriteria.getDefaultCriteria());
+			cqm.setCustomerUuid(customerUuid);
+
+			PageMyBatis<CartModel> page = ics.getByPage(cqm);
+			//2:
+			float totalMoney = 0.0f;
+			for(CartModel cm : page){
+				totalMoney += 10;
+			}
+
+			OrderModel order = new OrderModel();
+			order.setCustomerUuid(customerUuid);
+			order.setOrderTime(DateFormatHelper.long2str(System.currentTimeMillis()));
+			order.setSaveMoney(0.0F);
+			order.setTotalMoney(totalMoney);
+			order.setState(1);
+
+			create(order);
+
+			OrderQueryModel oqm = new OrderQueryModel();
+			oqm.setOrderTime(order.getOrderTime());
+
+        PageMyBatis<OrderModel>  orderPage = getByPage(oqm);
+			order = orderPage.get(0);
+
+			//3:
+			for(CartModel cm : page){
+				OrderDetailModel odm = new OrderDetailModel();
+				odm.setGoodsUuid(cm.getGoodsUuid());
+				odm.setOrderNum(cm.getBuyNum());
+				odm.setPrice(10.0f);
+				odm.setMoney(odm.getPrice() * odm.getOrderNum());
+				odm.setSaveMoney(0.0f);
+				odm.setOrderUuid(order.getUuid());
+
+				iods.create(odm);
+				//4:
+				StoreModel storeModel = iss.getByGoodsUuid(cm.getGoodsUuid());
+				storeModel.setStoreNum(storeModel.getStoreNum() - odm.getOrderNum());
+				iss.update(storeModel);
+
+				//5:
+				ics.delete(cm.getUuid());
+			}
+
 	}
 	
 }

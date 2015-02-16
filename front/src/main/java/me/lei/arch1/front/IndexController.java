@@ -89,11 +89,12 @@ public class IndexController {
 		
 		return "cart/myCart";
 	}
-	@RequestMapping(value="/order",method=RequestMethod.GET)
-	public String order(){//@CookieValue("MyLogin")String myLogin){
+	@RequestMapping(value="/order/submit",method=RequestMethod.GET)
+	public String order(@CookieValue("MyLogin")String myLogin){
 		//1:查出这个人购物车所有的信息		
-		int customerUuid = 1;//Integer.parseInt( myLogin.split(",")[0]);
-		
+//		int customerUuid = 1;//Integer.parseInt( myLogin.split(",")[0]);
+		int customerUuid =Integer.parseInt( myLogin.split(",")[0]);
+
 		ios.order(customerUuid);
 		
 		return "success";

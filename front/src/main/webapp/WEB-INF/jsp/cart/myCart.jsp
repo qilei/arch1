@@ -35,7 +35,7 @@
 
 	<tr>
 		<td colspan=4>
-			<a id="btn_order" href="${pageContext.request.contextPath}/order">提交订单</a>
+			<a id="btn_order" href="${pageContext.request.contextPath}/order/submit">提交订单</a>
 		</td>
 	</tr>
 </table>

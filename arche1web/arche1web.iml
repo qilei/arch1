@@ -26,7 +26,8 @@
     <orderEntry type="module" module-name="storemgr" />
     <orderEntry type="module" module-name="cartmgr" />
     <orderEntry type="module" module-name="filemgr" />
-    <orderEntry type="library" name="Maven: me.lei:ordermgr:war:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="ordermgr" />
+    <orderEntry type="module" module-name="front" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.0.0.RELEASE" level="project" />

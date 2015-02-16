@@ -14,6 +14,7 @@
         <module>cartmgr</module>
         <module>ordermgr</module>
         <module>filemgr</module>
+        <module>front</module>
     </modules>
     <packaging>pom</packaging>
 

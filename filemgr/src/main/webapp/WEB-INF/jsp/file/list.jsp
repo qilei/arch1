@@ -32,7 +32,7 @@
 			<td>操作</td>
 		</tr>
 			
-		<c:forEach var="m" items="${page.result}">
+		<c:forEach var="m" items="${pagedList}">
 		  <tr>
 			<td><a href='${m.remotePaths}'>${m.fileName}</a></td>
 	<td>${m.remotePaths}</td>
@@ -46,8 +46,7 @@
 				
 	    <tr>
 			<td colspan=${2+1} align="center">
-				<input type="hidden" id="queryJsonStr" value='${wm.queryJsonStr}'/>
-				<myTag:page page="${page}"></myTag:page>
+                <myTag:page pagedList="${pagedList}"></myTag:page>
 			</td>
 		</tr>
 	</table>

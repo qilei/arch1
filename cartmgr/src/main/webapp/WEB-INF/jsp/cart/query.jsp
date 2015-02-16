@@ -9,28 +9,22 @@
 <script src="${pageContext.request.contextPath}/static/js/jquery-1.11.0.js"></script>
 </head>
 <body>
-<form id="queryForm" action="${pageContext.request.contextPath}/order/toList" method="get">
+<form id="queryForm" action="${pageContext.request.contextPath}/cart/toList" method="get">
 <table width="100%" border="1" cellpadding="0" cellspacing="1" class="tableLine">
 	<tr>
-		<td colspan=4 align=center class="tableLineBg">order查询</td>
+		<td colspan=4 align=center class="tableLineBg">cart查询</td>
 	</tr>
 		
 		
 		<tr>
 	<td>客户编号</td>
 	<td><input type="text" id="customerUuid" name="customerUuid" ></td>
-	<td>下订单时间</td>
-	<td><input type="text" id="orderTime" name="orderTime" ></td>
+	<td>商品编号</td>
+	<td><input type="text" id="goodsUuid" name="goodsUuid" ></td>
 	</tr>
 <tr>
-	<td>总金额</td>
-	<td><input type="text" id="totalMoney" name="totalMoney" ></td>
-	<td>节省金额</td>
-	<td><input type="text" id="saveMoney" name="saveMoney" ></td>
-	</tr>
-<tr>
-	<td>状态</td>
-	<td><input type="text" id="state" name="state" ></td>
+	<td>购买数量</td>
+	<td><input type="text" id="buyNum" name="buyNum" ></td>
 	
 		
 		<tr>

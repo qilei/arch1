@@ -17,43 +17,37 @@
 <table  width="100%" border="1" cellpadding="0" cellspacing="1" class="tableLine DoubleColorTable" >
 	<tr>
 		<td colspan="6">
-			<a href="${pageContext.request.contextPath}/orderDetail/toQuery">转到查询</a>
+			<a href="${pageContext.request.contextPath}/cart/toQuery">转到查询</a>
 			&nbsp;&nbsp;
-			<a href="${pageContext.request.contextPath}/orderDetail/toAdd">转到新增</a>
+			<a href="${pageContext.request.contextPath}/cart/toAdd">转到新增</a>
 		</td>
 	</tr>
 		<tr>
-			<td colspan=${6+1} align="center" class="tableLineBg">订单明细列表</td>
+			<td colspan=${3+1} align="center" class="tableLineBg">购物车列表</td>
 		</tr>
 		<tr>
-			<td>订单编号</td>
+			<td>客户编号</td>
 	<td>商品编号</td>
 	<td>购买数量</td>
-	<td>购买价格</td>
-	<td>总金额</td>
-	<td>节省金额</td>
 	
 			<td>操作</td>
 		</tr>
 			
 		<c:forEach var="m" items="${pagedList}">
 		  <tr>
-			<td>${m.orderUuid}</td>
+			<td>${m.customerUuid}</td>
 	<td>${m.goodsUuid}</td>
-	<td>${m.orderNum}</td>
-	<td>${m.price}</td>
-	<td>${m.money}</td>
-	<td>${m.saveMoney}</td>
+	<td>${m.buyNum}</td>
 	<td>
-	<a href="${pageContext.request.contextPath}/orderDetail/toUpdate/${m.uuid}">修改 </a> |
-	<a href="${pageContext.request.contextPath}/orderDetail/toDelete/${m.uuid}">删除</a>
+	<a href="${pageContext.request.contextPath}/cart/toUpdate/${m.uuid}">修改 </a> |
+	<a href="${pageContext.request.contextPath}/cart/toDelete/${m.uuid}">删除</a>
 </td>
 
 		   </tr>
 		</c:forEach>
 				
 	    <tr>
-			<td colspan=${6+1} align="center">
+			<td colspan=${3+1} align="center">
                 <myTag:page pagedList="${pagedList}"></myTag:page>
 			</td>
 		</tr>

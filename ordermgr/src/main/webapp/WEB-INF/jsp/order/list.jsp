@@ -35,7 +35,7 @@
 			<td>操作</td>
 		</tr>
 			
-		<c:forEach var="m" items="${page.result}">
+		<c:forEach var="m" items="${pagedList}">
 		  <tr>
 			<td>${m.customerUuid}</td>
 	<td>${m.orderTime}</td>
@@ -52,8 +52,7 @@
 				
 	    <tr>
 			<td colspan=${5+1} align="center">
-				<input type="hidden" id="queryJsonStr" value='${wm.queryJsonStr}'/>
-				<myTag:page page="${page}"></myTag:page>
+                <myTag:page pagedList="${pagedList}"></myTag:page>
 			</td>
 		</tr>
 	</table>
